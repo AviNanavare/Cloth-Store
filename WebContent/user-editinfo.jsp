@@ -26,8 +26,8 @@
 					<td>password</td>
 					<td colspan="2">: <input type="text" name="password" value="<%out.print((String)session.getAttribute("password"));%>" ></td>
 				<tr>
-					<td><button onclick="userinfo.jsp" >Cancel</button>
-					<td><button type="reset" >Reset</button>
+					<td><button onclick="userinfo.jsp" >Cancel</button></td>
+					<td><button type="reset" >Reset</button></td>
 					<td><button type="submit" >Submit</button></td>
 				</tr>
 			</table>

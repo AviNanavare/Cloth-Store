@@ -44,7 +44,7 @@
 			else
 			{
 				out.print("Data is not Updated . . .");
-				%><h5>Here's, <a href="userinfo.jsp">My Account</a> Again. . .</h5><%
+				%><h5>Here's, <a href="use-editinfo.jsp">Edit-info</a> Again. . .</h5><%
 			}
 			
 		}catch(Exception e){
