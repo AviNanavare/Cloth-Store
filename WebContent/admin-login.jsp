@@ -4,17 +4,17 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Login</title>
+<title>Admin-login</title>
 </head>
 <body>
 <jsp:include page="header.jsp"></jsp:include>  
 <br><br>
-<form action="log-validation.jsp" method="post" style="margin: 0 auto; width:250px;">
-		<h1>Login User</h1>
+<form action="admin-login-validation.jsp" method="post" style="margin: 0 auto; width:250px;">
+		<h1>Admin Login</h1>
 			<table style="border: 1px solid black;">
 				<tr>
-					<td>email</td>
-					<td>:<input type="email" name="email"></td>
+					<td>userid</td>
+					<td>:<input type="text" name="userid"></td>
 				</tr>
 				<tr>
 					<td>password</td>
@@ -24,8 +24,7 @@
 				</tr>
 			</table>
 	</form>
-<h3 style="text-align: center;">Oops , Not Registered . . . . .</h3>
-<h3 style="text-align: center;">For Registration <a href="registration.jsp">click here</a></h3>
-<h3 style="text-align: center;"><a href="admin-login.jsp" >Admin-login</a></h3>
 </body>
+<br>
+<br>
 </html>
