@@ -9,7 +9,7 @@
 <link type="text/css" rel="stylesheet" href="Css/admin-user-info.css">
 </head>
 <body>
-<a href="admin-page.jsp" >Admin-info</a>
+<h3>Goto, <a href="admin-page.jsp" >Admin page</a></h3> 
 <br><br>
 <%
 

@@ -26,6 +26,6 @@
 	</form>
 <h3 style="text-align: center;">Oops , Not Registered . . . . .</h3>
 <h3 style="text-align: center;">For Registration <a href="registration.jsp">click here</a></h3>
-<h3 style="text-align: center;"><a href="admin-login.jsp" >Admin-login</a></h3>
+<h3 style="text-align: center;">Only, <a href="admin-login.jsp" >Admin login</a></h3>
 </body>
 </html>

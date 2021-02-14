@@ -1,17 +1,17 @@
-<%@page import="java.sql.*"%>
+<%@ page import="java.sql.*" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Login-info</title>
+<title>Admin login validation</title>
 </head>
 <body>
 <%
-	String email = request.getParameter("email");
+	String userid = request.getParameter("userid");
 	String password = request.getParameter("password");
-	String sql = "select * from customerinfo where email ='"+email+"' AND password ='"+password+"'";
+	String sql = "select * from admininfo where userid ='"+userid+"' AND password ='"+password+"'";
 %><%
 		try
 		{
@@ -22,30 +22,23 @@
 			
 			Statement stmt = con.createStatement();
 			ResultSet rs = stmt.executeQuery(sql);
-			
+			out.print("upto");
 			if(rs.next())
 			{
 				//Taking data from database
-				String name = rs.getString(1);
-				int age = rs.getInt(3);
-				int uniqueId = rs.getInt(5);
+				int uniquevalaId = rs.getInt(3);
 				
 				out.print("Login Successfully !!!");
 				%><h5>Here's <a href="dashboard.jsp">dashboard . . .</a></h5><%
 				request.getSession(true);
 				
 				//Adding data to session
-				session.setAttribute("name", name);
-				session.setAttribute("email", email);
-				session.setAttribute("age", age);
-				session.setAttribute("password", password);
-				session.setAttribute("uniqueId", uniqueId);
-				
+				session.setAttribute("uniquevalaId", uniquevalaId);					
 			}
 			else
 			{
 				out.print("userid or password is WRONG . . . ");
-				%><h5>Here's <a href="login.jsp">Login</a> Again . . .</h5><%
+				%><h5>Here's <a href="admin-login.jsp">Admin Login</a> Again . . .</h5><%
 			}
 			
 		}catch(Exception e){

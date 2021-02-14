@@ -9,15 +9,18 @@
 <link type="text/css" rel="stylesheet" href="Css/admin-user-info.css">
 </head>
 <body>
-<a href="admin-page.jsp" >Admin-info</a>
+<h3>Goto, <a href="admin-page.jsp" >Admin page</a></h3> 
 <br><br>
 <%
-
-int uniqueId;
+int id;
 String title;
+String Category;
+String Size;
 int price;
-String password;
-String sql = "select * from customerinfo";
+byte b[];
+String imagepath;
+String sql = "select a.uniqueId , a.imagepath , a.title , b.size , a.price "+
+				"from clothdata a join clothsize b ON a.size=b.id";
 
 	try{
 		
@@ -32,43 +35,57 @@ String sql = "select * from customerinfo";
 		%><div class="box">
 		<table class="main-table">
 			<tr>
-				<th><% out.print("Name"); %></th>
-				<th><% out.print("Email"); %></th>
-				<th><% out.print("Age"); %></th>
-				<th><% out.print("Password"); %></th>
+				<th><% out.print("ID"); %></th>
+				<th><% out.print("IMAGE"); %></th>
+				<th><% out.print("TITLE"); %></th>
+				<th><% out.print("SIZE"); %></th>
+				<th><% out.print("PRICE"); %></th>
 			</tr>
 		<%
 		while(rs.next())
 		{
-			name=rs.getString(1);
-			email = rs.getString(2);
-			age = rs.getInt(3);
-			password = rs.getString(4);
+			id=rs.getInt(1);
+			imagepath = rs.getString(2);
+			title = rs.getString(3);
+			Size = rs.getString(4);
+			price = rs.getInt(5);
+			
 			
 			%>
 			<tr>
-				<td><% out.print(name); %></td>
-				<td><% out.print(email); %></td>
-				<td><% out.print(age); %></td>
-				<td><% out.print(password); %></td>
+				<td><% out.print(id); %></td>
+				<td><img alt="extra" src="<%out.print(imagepath);%>"></td>
+				<td><% out.print(title); %></td>
+				<td><% out.print(Size); %></td>
+				<td><% out.print("&#8377 "+price+"/-"); %></td>
 			</tr>
 			<%
 		}
 	}catch(Exception e){
 		e.printStackTrace();
 	}
-%>
+%> 
 </table>
 </div>
 <br><br>
 <hr width="100%" >
 <div>
-<h4>Add user</h4>
-<form action="admin-user-add.jsp" >
-	name : <input type="text" name="name"><br>
-	email id : <input type="email" name="email"><br>
-	age : <input type="number" name="age" ><br>
-	password : <input type="password" name="password"><br>
+<h4>Add product</h4>
+<form action="admin-product-add.jsp" >
+	Title : <input type="text" name="title"><br>
+	Category : <select name="Category" >
+      <option value="Tshirts">Tshirts</option>
+      <option value="Tops">Tops</option>
+      <option value="Shirts">Shirts</option>
+      <option value="Pants">Pants</option>
+      <option value="Jeans">Jeans</option>
+      <option value="Sweaters">Sweaters</option>
+      <option value="Hats">Hats</option>
+  </select><br>
+	Size : <input type="number" name="age" ><br>
+	Price : <input type="password" name="password"><br>
+	Image : <input type="file" name="image">	
+	<br>
 	<button type="submit" >Submit</button>
 </form>
 </div>
@@ -76,9 +93,9 @@ String sql = "select * from customerinfo";
 <hr width="100%"> 
 <br>
 <div>
-<h4>Delete user</h4>
-<form action="admin-user-delete.jsp" >
-	enter email id of user : <input type="text" name="user-email"><br>
+<h4>Delete product</h4>
+<form action="admin-product-delete.jsp" >
+	enter uniqueId of product : <input type="number" name="uniqueId"><br>
 	<button type="submit" >delete</button>
 </form>
 </div>

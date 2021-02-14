@@ -23,7 +23,7 @@
 			System.out.print("Connection success . . .");
 			
 			PreparedStatement pt = con.prepareStatement
-					("insert into customerinfo value (?,?,?,?) ");
+					("insert into customerinfo (name,email,age,password) values (?,?,?,?) ");
 			
 			pt.setString(1, name);
 			pt.setString(2, email);

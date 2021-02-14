@@ -9,8 +9,8 @@
 </head>
 <body>
 <%
-	String email = request.getParameter("email");
-	String path = "delete from customerinfo where email ="+email;
+	String email = request.getParameter("user-email");
+	String path = "delete from customerinfo where email ='"+email+"'";
 %>
 <%
 		try

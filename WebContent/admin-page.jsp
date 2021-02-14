@@ -9,9 +9,11 @@
 <body>
 <jsp:include page="header.jsp"></jsp:include>  
 <br><br>
-<a href="admin-user-info.jsp"></a>
+<h1>Admin Section</h1>
 <br><br>
-<a href="admin-product-info.jsp"></a>
+<h3>Goto, <a href="admin-user-info.jsp">User details</a></h3>
+<br><br>
+<h3>Goto, <a href="admin-product-info.jsp">Product details</a></h3> 
 <br><br>
 </body>
 </html>

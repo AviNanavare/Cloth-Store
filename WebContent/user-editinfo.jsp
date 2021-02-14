@@ -12,22 +12,21 @@
 			<table style="border: 1px solid black;">
 				<tr>
 					<td>name</td>
-					<td colspan="2" >: <input type="text" name="name" value="<%out.print((String)session.getAttribute("name"));%>" ></td>
+					<td >: <input type="text" name="name" value="<%out.print((String)session.getAttribute("name"));%>" ></td>
 				</tr>
 				<tr>
 					<td>email</td>
-					<td colspan="2" >: <input type="email" name="email" value="<%out.print((String)session.getAttribute("email"));%>" ></td>
+					<td >: <input type="email" name="email" value="<%out.print((String)session.getAttribute("email"));%>" ></td>
 				</tr>
 				<tr>
 					<td>age</td>
-					<td colspan="2" >: <input type="number" name="age" value="<%out.print((int)session.getAttribute("age"));%>" ></td>
+					<td  >: <input type="number" name="age" value="<%out.print((int)session.getAttribute("age"));%>" ></td>
 				</tr>
 				<tr>
 					<td>password</td>
-					<td colspan="2">: <input type="text" name="password" value="<%out.print((String)session.getAttribute("password"));%>" ></td>
+					<td >: <input type="text" name="password" value="<%out.print((String)session.getAttribute("password"));%>" ></td>
+				</tr>
 				<tr>
-					<td><button onclick="userinfo.jsp" >Cancel</button></td>
-					<td><button type="reset" >Reset</button></td>
 					<td><button type="submit" >Submit</button></td>
 				</tr>
 			</table>

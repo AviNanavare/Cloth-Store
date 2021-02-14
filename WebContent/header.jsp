@@ -12,6 +12,7 @@
     <div class="header">
       <a href="#default" class="logo"><img alt="Logo" src="Images/Main-logo.png"></a>
       <a href="userinfo.jsp" id="userinfo"><%out.print(name);%></a>
+      <a href="admin-page.jsp" id="admin">Admin page</a>
       <div class="header-right">
         <a href="dashboard.jsp">Home</a>
         <a href="about.jsp">About</a>
@@ -22,25 +23,39 @@
       </div>
     </div>
     <%
-  		if(session.getAttribute("email")==null)
-  		{
-  			%> 
-  			<script>
-  			document.getElementById("login-register").style.visibility = "visible";
-  	        document.getElementById("my-account").style.visibility = "hidden";
-  	      	document.getElementById("userinfo").style.visibility = "hidden";
-  			</script>
-  			<%
-  		}
-  		else
+  		if(session.getAttribute("email")!=null)
   		{
   			%> 
 			<script>
 			document.getElementById("login-register").style.visibility = "hidden";
 	        document.getElementById("my-account").style.visibility = "visible";
 	        document.getElementById("userinfo").style.visibility = "visible";
+	        document.getElementById("admin").style.visibility = "hidden";
   			</script>		
 			<%
+  		}
+  		else 
+		if(session.getAttribute("uniquevalaId")!=null)
+  		{
+  			%> 
+  			<script>
+  			document.getElementById("login-register").style.visibility = "hidden";
+  	        document.getElementById("my-account").style.visibility = "visible";
+  	      	document.getElementById("userinfo").style.visibility = "hidden";
+  	      	document.getElementById("admin").style.visibility = "visible";
+  			</script>
+  			<%
+  		}
+  		else
+  		{
+  			%> 
+  			<script>
+  			document.getElementById("login-register").style.visibility = "visible";
+  	        document.getElementById("my-account").style.visibility = "hidden";
+  	      	document.getElementById("userinfo").style.visibility = "hidden";
+  	      	document.getElementById("admin").style.visibility = "hidden";
+  	      	</script>
+  			<%
   		}
     %>
     </body>

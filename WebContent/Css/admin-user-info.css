@@ -23,3 +23,9 @@ table, th, td {
 th, td {
 	height: 30px;
 }
+
+img {
+	height:100%;
+	display: block;
+}
+
