@@ -73,7 +73,7 @@ String sql = "select a.uniqueId , a.imagepath , a.title , b.size , a.price "+
 <h4>Add product</h4>
 <form action="admin-product-add.jsp" >
 	Title : <input type="text" name="title"><br>
-	Category : <select name="Category" >
+	Category : <select name="category" >
       <option value="Tshirts">Tshirts</option>
       <option value="Tops">Tops</option>
       <option value="Shirts">Shirts</option>
@@ -82,9 +82,16 @@ String sql = "select a.uniqueId , a.imagepath , a.title , b.size , a.price "+
       <option value="Sweaters">Sweaters</option>
       <option value="Hats">Hats</option>
   </select><br>
-	Size : <input type="number" name="age" ><br>
-	Price : <input type="password" name="password"><br>
-	Image : <input type="file" name="image">	
+	Size : <select name="size" >
+      <option value="S">Small(S)</option>
+      <option value="M">Medium(M)</option>
+      <option value="L">Large(L)</option>
+      <option value="XL">Large(XL)</option>
+      <option value="XXL">Large(XXL)</option>
+      <option value="XXXL">Large(XXXL)</option>
+      </select><br>
+	Price : <input type="number" name="price"><br>
+	Image : <input type="file" name="image" required="required">	
 	<br>
 	<button type="submit" >Submit</button>
 </form>
