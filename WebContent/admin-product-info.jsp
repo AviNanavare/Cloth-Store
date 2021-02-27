@@ -68,6 +68,7 @@ String sql = "select a.uniqueId , a.imagepath , a.title , b.size , a.price "+
 </table>
 </div>
 <br><br>
+<%--
 <hr width="100%" >
 <div>
 <h4>Add product</h4>
@@ -98,8 +99,8 @@ String sql = "select a.uniqueId , a.imagepath , a.title , b.size , a.price "+
 </div>
 <br>
 <hr width="100%"> 
-<br>
-<div>
+<br> --%>
+<div> 
 <h4>Delete product</h4>
 <form action="admin-product-delete.jsp" >
 	enter uniqueId of product : <input type="number" name="uniqueId"><br>

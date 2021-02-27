@@ -30,11 +30,6 @@
 			
 			InputStream is = part.getInputStream();
 			
-			pt.setString(1, name);
-			pt.setString(2, email);
-			pt.setInt(3, age);
-			pt.setString(4, password);
-			
 			int a = pt.executeUpdate();
 			
 			if(a>0)
@@ -46,7 +41,6 @@
 			else
 			{
 				out.print("You are not registered . . . ");
-				%><h5>Here's <a href="registration.jsp">registration</a> Again. . .</h5><%
 			}
 			
 		}catch(Exception e){

@@ -74,7 +74,7 @@ String sql = "select * from clothdata";
 	}catch(Exception e){
 		e.printStackTrace();
 	}
-%> 
+%>
 </table>
 </div>
 <Script type="text/javascript" src="Js/dashboard.js">	
