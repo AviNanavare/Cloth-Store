@@ -2,4 +2,6 @@
 
 Added files
 
-Created Simple Book-store using only JSP....
+Created Simple Cloth-store using only JSP....
+
+
